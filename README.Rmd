@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# docmaker
+# docmaker <a href="url"><img src="man/figures/bibliotekarien.png" align="right" width="30%"></a>
 
 <!-- badges: start -->
 <!-- badges: end -->

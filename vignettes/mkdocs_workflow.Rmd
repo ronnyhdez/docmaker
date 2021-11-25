@@ -1,0 +1,105 @@
+---
+title: "mkdocs_workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mkdocs_workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(docmaker)
+```
+
+## mkdocs set-up and workflow
+
+ - To build the site:
+
+```{bash}
+mkdocs build
+```
+
+ - To push the site
+
+```{bash}
+mkdocs gh-deploy --strict --force
+```
+
+## GitHub pages
+
+To allow your repository to be build as a static web page, you can follow the
+instructions from [github pages](https://pages.github.com/)
+
+## Setting your repo with mkdocs
+
+Once you clone your repository, go to your directory and in the terminal use
+the following command, tha it will create all the initial documents:
+
+```{bash}
+$mkdocs new .
+```
+
+All the documentation about mkdocs is [here](https://www.mkdocs.org/)
+
+
+After you have your repository set up, you can serve the site with:
+
+```{bash}
+$mkdocs serve
+```
+
+
+This will create all the static web page files and deploy locally the site. You
+can check your served site on: `http://127.0.0.1:8000/`
+
+### Using material theme
+
+If you don't like the default theme for your static web page, you can use many
+other themes. Here I used the material theme. All documentation can be found
+[here](https://squidfunk.github.io/mkdocs-material/creating-your-site/)
+
+
+To install the theme:
+
+```{bash}
+pip install mkdocs-material
+```
+
+
+Then, on your project `yml` file, you need to include the following:
+
+```
+theme:
+  name: material
+```
+
+## Deploying your site
+
+Now we are set. After you have your files ready, you need to send everything 
+to github:
+
+```{bash}
+$mkdocs gh-deploy
+```
+
+We should see a message like this one:
+
+```
+INFO     -  Your documentation should shortly be available at: https://ronnyhdez.github.io/draweR/
+```
+
+# Don't control version your site folder!
+
+Don't forget to put on your `.gitignore` file the `site` folder
+
+
+
+

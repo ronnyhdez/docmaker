@@ -1,5 +1,17 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # docmaker
 
@@ -10,8 +22,7 @@ Create your notes with Rmd and deploy them with mkdocs and github pages.
 
 ## Installation
 
-You can install the development version of docmaker from
-[GitHub](https://github.com/) with:
+You can install the development version of docmaker from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -23,7 +34,8 @@ devtools::install_github("ronnyhdez/docmaker")
 Once you have a repository, you can take your Rmd notes and deploy it to
 GitHup pages
 
-``` r
+```{r example, eval = FALSE}
 library(docmaker)
 publish_notes(file = "check.Rmd", mkdocs_build = TRUE, mkdocs_deploy = TRUE)
 ```
+

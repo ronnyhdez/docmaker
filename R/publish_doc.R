@@ -6,6 +6,7 @@
 #' to a markdown file that can be taken by mkdocs to render a HTML
 #' 
 #' @param file The Rmarkdown file that we want to convert to markdown
+#' 
 #' @param mkdocs_build TRUE if you want to build the mkdocs documentation. This
 #'  will run the `mkdocs build --config-file=mkdocs.yml` command
 #' 
@@ -31,6 +32,7 @@ publish_notes <- function(file, overwrite = TRUE, mkdocs_build = FALSE, mkdocs_d
                     output_format = "md_document")
   
   # Copy new md file to docs/ folder (where site in rendered)
+  # TODO: use fs::file_move()
   
   if (overwrite == TRUE) {
     fs::file_copy(file_name, new_path = "docs/", overwrite = TRUE)

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# docmaker
+# docmaker <a href="url"><img src="man/figures/bibliotekarien.png" align="right" width="30%"></a>
 
 <!-- badges: start -->
 <!-- badges: end -->

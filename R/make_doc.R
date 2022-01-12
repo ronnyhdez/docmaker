@@ -1,22 +1,26 @@
-#' @title Convert from Rmarkdown to markdown
+#' @title Take your Rmarkdown file to mkdocs
 #' 
 #' @author Ronny Alexander Hernández Mora
 #' 
-#' @description This function will take the Rmarkdown file and transform it
+#' @description This function will take your Rmarkdown file and transform it
 #' to a markdown file that can be taken by mkdocs to render a HTML
 #' 
 #' @param file The Rmarkdown file that we want to convert to markdown
 #' 
 #' @param mkdocs_build TRUE if you want to build the mkdocs documentation. This
 #'  will run the `mkdocs build --config-file=mkdocs.yml` command
+#'  
+#' @param mkdocs_deploy TRUE if you want to deploy the mkdocs documentation. This
+#'  will run the `mkdocs gh-deploy --strict --force` command
 #' 
 #' @example 
 #' \dontrun{
-#' publish_notes(file = "check.Rmd")
+#' make_doc(file = "check.Rmd")
 #'}
 #'
 #' @export
-publish_notes <- function(file, overwrite = TRUE, mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
+make_doc <- function(file, overwrite = TRUE, 
+                          mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
   
   # Workflow with files out of a folder ----
   

@@ -34,8 +34,8 @@ build_repo <- function(github_page_url, site_author) {
   if (!fs::file_exists("mkdocs.yml")) {
     
     # Create elements for the basic info needed in the yml
-    author <- paste0("site_author: ", site_author)
     link <- paste0("site_url: ", github_page_url)
+    author <- paste0("site_author: ", site_author)
     project_name <- rstudioapi::getActiveProject()
     project_name <- stringr::str_remove(project_name, ".*/")
     project_name <- paste0("site_name: ", project_name)
@@ -43,7 +43,7 @@ build_repo <- function(github_page_url, site_author) {
     
     yml_file <- file("mkdocs.yml")
     
-    writeLines(c("site_name: drawer",
+    writeLines(c(project_name,
                  author,
                  link,
                  "theme:",
@@ -54,6 +54,18 @@ build_repo <- function(github_page_url, site_author) {
                yml_file)
     
     close(yml_file)
+    
+    # Include in .gitignore the site folder
+    gitignore_file <- file(".gitignore")
+    
+    existing_elements <- readLines(gitignore_file)
+    
+    writeLines(c(existing_elements,
+                 "site/"),
+               gitignore_file)
+    
+    close(gitignore_file)
+    
   }
 }
 

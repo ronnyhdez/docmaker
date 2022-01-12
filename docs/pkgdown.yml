@@ -1,0 +1,7 @@
+pandoc: 2.11.4
+pkgdown: 2.0.1
+pkgdown_sha: ~
+articles:
+  mkdocs_workflow: mkdocs_workflow.html
+last_built: 2022-01-12T08:18Z
+

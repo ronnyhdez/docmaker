@@ -1,5 +1,5 @@
 Package: docmaker
-Title: What the Package Does (One Line, Title Case)
+Title: Take you repo Rmd files to mkdocs and deploy to gh-pages
 Version: 0.0.0.9000
 Authors@R: 
       person(given = "Ronny",
@@ -7,12 +7,15 @@ Authors@R:
          role = c("aut", "cre"),
          email = "ronny.hernandezm@gmail.com",
          comment = c(ORCID = "0000-0001-6225-7096"))
-Description: 
+Description: Provides functionality to build all your Rmd file with mkdocs and 
+    publish them to your github repository web pages. 
 Depends: R (>= 3.3.0)
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
+URL: https://github.com/ronnyhdez/docmaker
+BugReports: https://github.com/ronnyhdez/docmaker/issues
 RoxygenNote: 7.1.2
 Suggests: 
     rmarkdown,

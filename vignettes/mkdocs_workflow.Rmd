@@ -19,6 +19,9 @@ knitr::opts_chunk$set(
 library(docmaker)
 ```
 
+## Allow GitHUb pages in your repository
+
+
 ## mkdocs set-up and workflow
 
  - To build the site:

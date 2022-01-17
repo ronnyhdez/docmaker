@@ -19,8 +19,7 @@
 #'}
 #'
 #' @export
-make_doc <- function(file, overwrite = TRUE, 
-                          mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
+make_doc <- function(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
   
   # Workflow with files out of a folder ----
   
@@ -36,33 +35,18 @@ make_doc <- function(file, overwrite = TRUE,
                     output_format = "md_document")
   
   # Copy new md file to docs/ folder (where site in rendered)
-  # TODO: use fs::file_move()
-  
-  if (overwrite == TRUE) {
-    fs::file_copy(file_name, new_path = "docs/", overwrite = TRUE)
-  } else {
-    fs::file_copy(file_name, new_path = "docs/")
-    fs::file_delete(file_name)
-  }
-  
-  # md file in here is no longer needed
-  fs::file_delete(file_name)
+  fs::file_move(file_name, new_path = "docs/")
   
   # Create path string to copy from.
-  file_name <- fs::path_ext_remove(file_name)
+  images_generated_from_file <- paste0(fs::path_ext_remove(file_name),
+                                       "_files/")
   
-  images_from_file <- paste0(file_name, "_files/")
-  
-  if (fs::dir_exists(images_from_file)) {
-    
-    file_path_name <- paste0("docs/", images_from_file)
-    
+  if (fs::dir_exists(images_generated_from_file)) {
+    file_path_name <- paste0("docs/", images_generated_from_file)
     images_output <- paste0(here::here(), "/", file_path_name)
     
     if (!fs::dir_exists(images_output)) {
-      
-      file_outputs <- paste0(here::here(), "/", images_from_file)
-      
+      file_outputs <- paste0(here::here(), "/", images_generated_from_file)
       fs::dir_copy(path = file_outputs,
                    # Path by default on resulting md file involves a
                    # second docs/ folder. That's why I have to create
@@ -72,11 +56,10 @@ make_doc <- function(file, overwrite = TRUE,
       
       # Remove unused folder
       fs::dir_delete(file_outputs)
-      # fs::dir_delete(paste0(here::here(), "/", file_path_name))
-      
     }
-    
   }
+  
+  copy_rmd_images(file_to_deploy = file)
   
   # Build mkdocs documentation
   if (mkdocs_build == TRUE) {
@@ -87,8 +70,6 @@ make_doc <- function(file, overwrite = TRUE,
   if (mkdocs_deploy == TRUE) {
     system("mkdocs gh-deploy --strict --force")
   }
-  
 }
-
 
 

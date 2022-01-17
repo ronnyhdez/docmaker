@@ -4,7 +4,7 @@
 \alias{make_doc}
 \title{Take your Rmarkdown file to mkdocs}
 \usage{
-make_doc(file, overwrite = TRUE, mkdocs_build = FALSE, mkdocs_deploy = FALSE)
+make_doc(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE)
 }
 \arguments{
 \item{file}{The Rmarkdown file that we want to convert to markdown}

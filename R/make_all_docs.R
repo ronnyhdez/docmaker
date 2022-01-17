@@ -1,3 +1,5 @@
+#' @importFrom magrittr %>%
+
 #' @title Build and deploy all your Rmd documents to your gh-pages site
 #' 
 #' @author Ronny Alexander Hernández Mora

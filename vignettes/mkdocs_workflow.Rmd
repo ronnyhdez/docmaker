@@ -22,87 +22,129 @@ library(docmaker)
 ## Allow GitHUb pages in your repository
 
 
-## mkdocs set-up and workflow
+### Getting MkDocs
 
- - To build the site:
+For this, I followed the instructions over [here](https://www.mkdocs.org/user-guide/installation/).
+I got already python on my machine and I'm a Linux user, so I'm using 
+Ubuntu 20.04
 
-```{bash}
-mkdocs build
-```
-
- - To push the site
+Given that I had already python I just installed MkDocs:
 
 ```{bash}
-mkdocs gh-deploy --strict --force
+pip install mkdocs
 ```
 
-## GitHub pages
-
-To allow your repository to be build as a static web page, you can follow the
-instructions from [github pages](https://pages.github.com/)
-
-## Setting your repo with mkdocs
-
-Once you clone your repository, go to your directory and in the terminal use
-the following command, tha it will create all the initial documents:
+Then I validated that the installation was succesful:
 
 ```{bash}
-$mkdocs new .
+$ mkdocs --version
+mkdocs, version 1.2.2 from /home/your_username/.local/lib/python3.8/site-packages/mkdocs (Python 3.8)
 ```
 
-All the documentation about mkdocs is [here](https://www.mkdocs.org/)
+Done! I got MkDocs on my computer.
 
+### Getting Matherial theme
 
-After you have your repository set up, you can serve the site with:
+I don't like the default theme that comes with MkDocs, so I changed to 
+[Matherial](https://squidfunk.github.io/mkdocs-material/getting-started/).
+
+To install this theme, you will need to run in the terminal:
 
 ```{bash}
-$mkdocs serve
+$ pip3 install mkdocs-material
 ```
 
+## Working on your notes
 
-This will create all the static web page files and deploy locally the site. You
-can check your served site on: `http://127.0.0.1:8000/`
+Now we are all set. We can start creating our Rmarkdown documents:
 
-### Using material theme
+Create as many `Rmd` documents as you need. Each document will be a "section"
+on your final website. 
 
-If you don't like the default theme for your static web page, you can use many
-other themes. Here I used the material theme. All documentation can be found
-[here](https://squidfunk.github.io/mkdocs-material/creating-your-site/)
+Each of the titles and subtitles in your document will be sections inside the
+specific page.
 
+Also, use relative paths. This will make everything less error prone. 
 
-To install the theme:
+Now, because we are going to use the package [docmaker](https://github.com/ronnyhdez/docmaker)
+we need to follow a structure:
 
-```{bash}
-pip install mkdocs-material
+ - All your `Rmd` files should be in the root of your project.
+ - Your data, images, pdfs files can be saved inside folders.
+ - **Don't use `docs` folder**. This is a special folder designated to save the
+ files needed to build the web page. `docmaker` package will be in charge of 
+ the use of this folder, so you don't have to worry about it.
+ 
+## Deploy and publish your notes with `docmaker`
+
+So far, we have our notes. But we are still lacking the part of publishing in
+our web page the notes. There are several steps to do this manually but after
+many times repeating everything I decided to create a small R package to
+automatize this steps. This package is called [dockmaer](https://github.com/ronnyhdez/docmaker)
+
+You can install the package with:
+
+```{r, eval = FALSE}
+devtools::install_github("ronnyhdez/docmaker")
 ```
 
+Now, on your console you can load the package:
 
-Then, on your project `yml` file, you need to include the following:
-
-```
-theme:
-  name: material
+```{r, eval = FALSE}
+library(docmaker)
 ```
 
-## Deploying your site
+### Configure repo with `docmaker`
 
-Now we are set. After you have your files ready, you need to send everything 
-to github:
+Before building and deploying our notes, we need to do some configuration steps
+in our repository. `docmaker` can take care of this with the function:
 
-```{bash}
-$mkdocs gh-deploy
+```{r, eval = FALSE}
+build_repo(github_page_url = "https://ronnyhdez.github.io/test_docmaker/",
+           site_author = "Ronny A. Hernández Mora")
 ```
 
-We should see a message like this one:
+We can get the URL of our repository in the settings > page on GitHub. After
+we enabled this in a step before, there should appear the URL designated by
+GitHub for our web site.
 
+The `site_author` should be our name.
+
+This function will do the following:
+
+ - Create a `yml` file
+ - Add to the `.gitignore` the `site` folder
+ - Create a `docs` folder
+
+### Build and deploy notes
+
+Because this is our first time, all of our notes (three in the example) are not
+existing as `md` documents nor even built or deploy with mkdocs.
+
+`docmaker` have a function to take **all the .Rmd files** existing in our project
+root and do all the steps needed to deploy this ones:
+
+```{r, eval = FALSE}
+make_all_docs(deploy = TRUE)
 ```
-INFO     -  Your documentation should shortly be available at: https://ronnyhdez.github.io/draweR/
-```
 
-# Don't control version your site folder!
+This function will do the following:
 
-Don't forget to put on your `.gitignore` file the `site` folder
+ - Render all our `Rmd` files to `md`
+ - Move the outputs (including images) to the `docs` folder
+ - If we are using a `README.Rmd` file **this will be ignore**
+ - Build the mkdocs
+ - If `deploy` is set to `TRUE` it will deploy the notes.
+ - Create an specifi branch for the pages deployment: `gh-deploy`
+ 
+Now, given that we are using a new branch to be deployed, we need to go back to
+GitHub pages and make a small change: change the branch selected to be build 
+from `main` to `gh-pages`
 
+After some seconds (or a few minutes), we should be able to see our site alive!
 
+## More detailed steps
 
+I have created a blog post with more detailed steps if you get confused with
+the steps setting on your GitHub pages in [here](https://ronnyhdez.github.io/blog/posts/2021-12-11-usingmkdocsrmd/)
 

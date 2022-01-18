@@ -70,23 +70,42 @@
 <a class="anchor" aria-label="anchor" href="#docmaker-"></a>
 </h1></div>
 <!-- badges: start -->
-<!-- badges: end -->
-<p>Create your notes with Rmd and deploy them with mkdocs and github pages.</p>
+
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p><code>docmaker</code> is a package that allows you to automate your steps for using GitHub pages, MkDocs and Rmarkdown.</p>
+<p>If you have a project in which there are files built with Rmarkdown that you would like to take to MkDocs, <code>docmaker</code> will help you with the all the steps in the middle to achieve this.</p>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of docmaker from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <code>docmaker</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ronnyhdez/docmaker"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ronnyhdez/docmaker"</span><span class="op">)</span></code></pre></div>
+<p>When published on CRAN, you will be able to install the package with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>Once you have a repository, you can take your Rmd notes and deploy it to GitHup pages</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p>You can create your repository on GitHub, clone your repo and from there, you will need to implement a structure to be able to use GitHub pages and MkDocs. For this you can use the function:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ronnyhdez/docmaker" class="external-link">docmaker</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/publish_notes.html">publish_notes</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"check.Rmd"</span>, mkdocs_build <span class="op">=</span> <span class="cn">TRUE</span>, mkdocs_deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/build_repo.html">build_repo</a></span><span class="op">(</span>github_page_url <span class="op">=</span> <span class="st">"https://ronnyhdez.github.io/drawer/"</span>,
+           site_author <span class="op">=</span> <span class="st">"Ronny A. Hernández Mora"</span><span class="op">)</span></code></pre></div>
+<p>Once you have a repository, you can take your Rmd notes and deploy it to GitHup pages</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/make_doc.html">make_doc</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"check.Rmd"</span>, mkdocs_build <span class="op">=</span> <span class="cn">TRUE</span>, mkdocs_deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>If you have several files in the root of your project directory, you can instead use the following function to build and deploy all your Rmd files:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/make_all_docs.html">make_all_docs</a></span><span class="op">(</span>deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+</h2>
+<p>If you find a bug please fill an issue with a reproducible example on <a href="https://github.com/ronnyhdez/docmaker/issues/" class="external-link">GitHub</a></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -120,7 +139,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=docmaker" class="external-link"><img src="https://www.r-pkg.org/badges/version/docmaker" alt="CRAN status"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>

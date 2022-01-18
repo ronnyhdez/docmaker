@@ -1,6 +1,6 @@
 Package: docmaker
 Title: Take you repo Rmd files to mkdocs and deploy to gh-pages
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
       person(given = "Ronny",
          family = "Hernández Mora", 
@@ -14,10 +14,19 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/ronnyhdez/docmaker
+URL: https://github.com/ronnyhdez/docmaker,
+    https://ronnyhdez.github.io/docmaker/
 BugReports: https://github.com/ronnyhdez/docmaker/issues
 RoxygenNote: 7.1.2
 Suggests: 
     rmarkdown,
     knitr
+Imports:
+    magrittr,
+    fs,
+    here,
+    purrr,
+    rlang,
+    rstudioapi,
+    stringr
 VignetteBuilder: knitr

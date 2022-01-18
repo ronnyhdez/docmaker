@@ -3,5 +3,8 @@ pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   mkdocs_workflow: mkdocs_workflow.html
-last_built: 2022-01-12T08:18Z
+last_built: 2022-01-18T05:30Z
+urls:
+  reference: https://ronnyhdez.github.io/docmaker/reference
+  article: https://ronnyhdez.github.io/docmaker/articles
 

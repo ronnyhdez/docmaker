@@ -19,6 +19,12 @@ will run the \verb{mkdocs gh-deploy --strict --force} command}
 This function will take your Rmarkdown file and transform it
 to a markdown file that can be taken by mkdocs to render a HTML
 }
+\examples{
+\dontrun{
+make_doc(file = "check.Rmd")
+}
+
+}
 \author{
 Ronny Alexander Hernández Mora
 }

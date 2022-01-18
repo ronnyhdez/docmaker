@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  mkdocs_workflow: mkdocs_workflow.html
+last_built: 2022-01-18T05:41Z
+urls:
+  reference: https://ronnyhdez.github.io/docmaker/reference
+  article: https://ronnyhdez.github.io/docmaker/articles
+

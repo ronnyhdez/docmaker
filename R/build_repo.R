@@ -16,7 +16,7 @@
 #' @param site_author The name of the author. This is going to be written in
 #' the mkdocs.yml file.
 #' 
-#' @example 
+#' @examples 
 #' \dontrun{
 #' build_repo(github_page_url = "https://ronnyhdez.github.io/drawer/",
 #'            site_author = "Ronny A. Hernández Mora")

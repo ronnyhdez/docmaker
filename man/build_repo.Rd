@@ -24,6 +24,13 @@ will be located coupled with output files as images. Also it will create a
 \code{mkdocs.yml} file that uses material theme, contains the site url and the
 author name.
 }
+\examples{
+\dontrun{
+build_repo(github_page_url = "https://ronnyhdez.github.io/drawer/",
+           site_author = "Ronny A. Hernández Mora")
+}
+
+}
 \author{
 Ronny Alexander Hernández Mora
 }

@@ -13,7 +13,7 @@
 #' @param mkdocs_deploy TRUE if you want to deploy the mkdocs documentation. This
 #'  will run the `mkdocs gh-deploy --strict --force` command
 #' 
-#' @example 
+#' @examples 
 #' \dontrun{
 #' make_doc(file = "check.Rmd")
 #'}

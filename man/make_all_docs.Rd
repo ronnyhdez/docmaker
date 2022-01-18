@@ -22,6 +22,12 @@ and then build with mkdocs followed by the deployment action if param
 If you are using your README file as .Rmd, this function will ignore this
 file.
 }
+\examples{
+\dontrun{
+make_all_docs(deploy = TRUE)
+}
+
+}
 \author{
 Ronny Alexander Hernández Mora
 }

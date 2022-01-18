@@ -17,7 +17,7 @@
 #' 
 #' @param deploy If TRUE all the Rmd documents will be deploy to your site
 #' 
-#' @example 
+#' @examples 
 #' \dontrun{
 #' make_all_docs(deploy = TRUE)
 #'}

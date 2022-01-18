@@ -77,54 +77,95 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ronnyhdez/docmaker" class="external-link">docmaker</a></span><span class="op">)</span></code></pre></div>
 <div class="section level2">
-<h2 id="mkdocs-set-up-and-workflow">mkdocs set-up and workflow<a class="anchor" aria-label="anchor" href="#mkdocs-set-up-and-workflow"></a>
+<h2 id="allow-github-pages-in-your-repository">Allow GitHUb pages in your repository<a class="anchor" aria-label="anchor" href="#allow-github-pages-in-your-repository"></a>
 </h2>
-<ul>
-<li>To build the site:</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs</span> build</span></code></pre></div>
-<ul>
-<li>To push the site</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs</span> gh-deploy <span class="at">--strict</span> <span class="at">--force</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="github-pages">GitHub pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
-</h2>
-<p>To allow your repository to be build as a static web page, you can follow the instructions from <a href="https://pages.github.com/" class="external-link">github pages</a></p>
-</div>
-<div class="section level2">
-<h2 id="setting-your-repo-with-mkdocs">Setting your repo with mkdocs<a class="anchor" aria-label="anchor" href="#setting-your-repo-with-mkdocs"></a>
-</h2>
-<p>Once you clone your repository, go to your directory and in the terminal use the following command, tha it will create all the initial documents:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">$mkdocs</span> new .</span></code></pre></div>
-<p>All the documentation about mkdocs is <a href="https://www.mkdocs.org/" class="external-link">here</a></p>
-<p>After you have your repository set up, you can serve the site with:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">$mkdocs</span> serve</span></code></pre></div>
-<p>This will create all the static web page files and deploy locally the site. You can check your served site on: <code>http://127.0.0.1:8000/</code></p>
 <div class="section level3">
-<h3 id="using-material-theme">Using material theme<a class="anchor" aria-label="anchor" href="#using-material-theme"></a>
+<h3 id="getting-mkdocs">Getting MkDocs<a class="anchor" aria-label="anchor" href="#getting-mkdocs"></a>
 </h3>
-<p>If you don’t like the default theme for your static web page, you can use many other themes. Here I used the material theme. All documentation can be found <a href="https://squidfunk.github.io/mkdocs-material/creating-your-site/" class="external-link">here</a></p>
-<p>To install the theme:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mkdocs-material</span></code></pre></div>
-<p>Then, on your project <code>yml</code> file, you need to include the following:</p>
-<pre><code><span class="va">theme</span><span class="op">:</span>
-  <span class="va">name</span><span class="op">:</span> <span class="va">material</span></code></pre>
+<p>For this, I followed the instructions over <a href="https://www.mkdocs.org/user-guide/installation/" class="external-link">here</a>. I got already python on my machine and I’m a Linux user, so I’m using Ubuntu 20.04</p>
+<p>Given that I had already python I just installed MkDocs:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mkdocs</span></code></pre></div>
+<p>Then I validated that the installation was succesful:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdocs <span class="at">--version</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdocs,</span> version 1.2.2 from /home/your_username/.local/lib/python3.8/site-packages/mkdocs <span class="er">(</span><span class="ex">Python</span> 3.8<span class="kw">)</span></span></code></pre></div>
+<p>Done! I got MkDocs on my computer.</p>
+</div>
+<div class="section level3">
+<h3 id="getting-matherial-theme">Getting Matherial theme<a class="anchor" aria-label="anchor" href="#getting-matherial-theme"></a>
+</h3>
+<p>I don’t like the default theme that comes with MkDocs, so I changed to <a href="https://squidfunk.github.io/mkdocs-material/getting-started/" class="external-link">Matherial</a>.</p>
+<p>To install this theme, you will need to run in the terminal:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip3 install mkdocs-material</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
-<h2 id="deploying-your-site">Deploying your site<a class="anchor" aria-label="anchor" href="#deploying-your-site"></a>
+<h2 id="working-on-your-notes">Working on your notes<a class="anchor" aria-label="anchor" href="#working-on-your-notes"></a>
 </h2>
-<p>Now we are set. After you have your files ready, you need to send everything to github:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">$mkdocs</span> gh-deploy</span></code></pre></div>
-<p>We should see a message like this one:</p>
-<pre><code>INFO     -  Your documentation should shortly be available at: https://ronnyhdez.github.io/draweR/</code></pre>
+<p>Now we are all set. We can start creating our Rmarkdown documents:</p>
+<p>Create as many <code>Rmd</code> documents as you need. Each document will be a “section” on your final website.</p>
+<p>Each of the titles and subtitles in your document will be sections inside the specific page.</p>
+<p>Also, use relative paths. This will make everything less error prone.</p>
+<p>Now, because we are going to use the package <a href="https://github.com/ronnyhdez/docmaker" class="external-link">docmaker</a> we need to follow a structure:</p>
+<ul>
+<li>All your <code>Rmd</code> files should be in the root of your project.</li>
+<li>Your data, images, pdfs files can be saved inside folders.</li>
+<li>
+<strong>Don’t use <code>docs</code> folder</strong>. This is a special folder designated to save the files needed to build the web page. <code>docmaker</code> package will be in charge of the use of this folder, so you don’t have to worry about it.</li>
+</ul>
 </div>
-<div class="section level1">
-<h1 id="dont-control-version-your-site-folder">Don’t control version your site folder!<a class="anchor" aria-label="anchor" href="#dont-control-version-your-site-folder"></a>
-</h1>
-<p>Don’t forget to put on your <code>.gitignore</code> file the <code>site</code> folder</p>
+<div class="section level2">
+<h2 id="deploy-and-publish-your-notes-with-docmaker">Deploy and publish your notes with <code>docmaker</code><a class="anchor" aria-label="anchor" href="#deploy-and-publish-your-notes-with-docmaker"></a>
+</h2>
+<p>So far, we have our notes. But we are still lacking the part of publishing in our web page the notes. There are several steps to do this manually but after many times repeating everything I decided to create a small R package to automatize this steps. This package is called <a href="https://github.com/ronnyhdez/docmaker" class="external-link">dockmaer</a></p>
+<p>You can install the package with:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ronnyhdez/docmaker"</span><span class="op">)</span></code></pre></div>
+<p>Now, on your console you can load the package:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ronnyhdez/docmaker" class="external-link">docmaker</a></span><span class="op">)</span></code></pre></div>
+<div class="section level3">
+<h3 id="configure-repo-with-docmaker">Configure repo with <code>docmaker</code><a class="anchor" aria-label="anchor" href="#configure-repo-with-docmaker"></a>
+</h3>
+<p>Before building and deploying our notes, we need to do some configuration steps in our repository. <code>docmaker</code> can take care of this with the function:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/build_repo.html">build_repo</a></span><span class="op">(</span>github_page_url <span class="op">=</span> <span class="st">"https://ronnyhdez.github.io/test_docmaker/"</span>,
+           site_author <span class="op">=</span> <span class="st">"Ronny A. Hernández Mora"</span><span class="op">)</span></code></pre></div>
+<p>We can get the URL of our repository in the settings &gt; page on GitHub. After we enabled this in a step before, there should appear the URL designated by GitHub for our web site.</p>
+<p>The <code>site_author</code> should be our name.</p>
+<p>This function will do the following:</p>
+<ul>
+<li>Create a <code>yml</code> file</li>
+<li>Add to the <code>.gitignore</code> the <code>site</code> folder</li>
+<li>Create a <code>docs</code> folder</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="build-and-deploy-notes">Build and deploy notes<a class="anchor" aria-label="anchor" href="#build-and-deploy-notes"></a>
+</h3>
+<p>Because this is our first time, all of our notes (three in the example) are not existing as <code>md</code> documents nor even built or deploy with mkdocs.</p>
+<p><code>docmaker</code> have a function to take <strong>all the .Rmd files</strong> existing in our project root and do all the steps needed to deploy this ones:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/make_all_docs.html">make_all_docs</a></span><span class="op">(</span>deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>This function will do the following:</p>
+<ul>
+<li>Render all our <code>Rmd</code> files to <code>md</code>
+</li>
+<li>Move the outputs (including images) to the <code>docs</code> folder</li>
+<li>If we are using a <code>README.Rmd</code> file <strong>this will be ignore</strong>
+</li>
+<li>Build the mkdocs</li>
+<li>If <code>deploy</code> is set to <code>TRUE</code> it will deploy the notes.</li>
+<li>Create an specifi branch for the pages deployment: <code>gh-deploy</code>
+</li>
+</ul>
+<p>Now, given that we are using a new branch to be deployed, we need to go back to GitHub pages and make a small change: change the branch selected to be build from <code>main</code> to <code>gh-pages</code></p>
+<p>After some seconds (or a few minutes), we should be able to see our site alive!</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="more-detailed-steps">More detailed steps<a class="anchor" aria-label="anchor" href="#more-detailed-steps"></a>
+</h2>
+<p>I have created a blog post with more detailed steps if you get confused with the steps setting on your GitHub pages in <a href="https://ronnyhdez.github.io/blog/posts/2021-12-11-usingmkdocsrmd/" class="external-link">here</a></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

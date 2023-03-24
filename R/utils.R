@@ -44,5 +44,5 @@ copy_rmd_images <- function(file_to_deploy) {
       })
   }
   
-  close(file_to_deploy)
+  # close(file_to_deploy)
 }

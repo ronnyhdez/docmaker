@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# docmaker <a href="url"><img src="man/figures/bibliotekarien.png" align="right" width="30%"></a>
+# docmaker <a href="url"><img src="man/figures/logo.png" align="right" width="30%"></a>
 
 <!-- badges: start -->
 
@@ -66,3 +66,7 @@ make_all_docs(deploy = TRUE)
 
 If you find a bug please fill an issue with a reproducible example on
 [GitHub](https://github.com/ronnyhdez/docmaker/issues/)
+
+## Ref
+
+Image is the bibliotekarien

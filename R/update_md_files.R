@@ -1,4 +1,4 @@
-library(dplyr)
+#' @import dplyr
 
 #' @title Update your md files
 #' 

@@ -11,12 +11,13 @@ status](https://www.r-pkg.org/badges/version/docmaker)](https://cran.r-project.o
 
 ## Overview
 
-`docmaker` is a package that allows you to automate your steps for using
-GitHub pages, MkDocs and Rmarkdown.
+`docmaker` is a package that allows you to automate your workflow for
+taking notes or creating documentation and publish it as a webpage using
+GitHub pages, MkDocs, and Rmarkdown or Quarto or Markdown.
 
-If you have a project in which there are files built with Rmarkdown that
-you would like to take to MkDocs, `docmaker` will help you with the all
-the steps in the middle to achieve this.
+If you have a repository with files built with Rmarkdown/Quarto/Markdown
+that you would like to take to MkDocs; `docmaker` will help you with the
+all the steps in the middle to achieve this.
 
 ## Installation
 
@@ -27,7 +28,7 @@ You can install the development version of `docmaker` from
 devtools::install_github("ronnyhdez/docmaker")
 ```
 
-When published on CRAN, you will be able to install the package with:
+If you don´t have the `devtools` package installed, run the following:
 
 ``` r
 install.packages("devtools")
@@ -45,8 +46,8 @@ build_repo(github_page_url = "https://ronnyhdez.github.io/drawer/",
            site_author = "Ronny A. Hernández Mora")
 ```
 
-Once you have a repository, you can take your Rmd notes and deploy it to
-GitHup pages
+Once you have a repository, you can take your Rmarkdown/Quarto/Markdown
+notes and deploy them with GitHup pages
 
 ``` r
 make_doc(file = "check.Rmd", mkdocs_build = TRUE, mkdocs_deploy = TRUE)

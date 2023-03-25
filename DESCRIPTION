@@ -17,7 +17,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/ronnyhdez/docmaker,
     https://ronnyhdez.github.io/docmaker/
 BugReports: https://github.com/ronnyhdez/docmaker/issues
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Suggests: 
     rmarkdown,
     knitr

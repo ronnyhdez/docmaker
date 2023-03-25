@@ -7,6 +7,9 @@
     <loc>https://ronnyhdez.github.io/docmaker/LICENSE-text.html</loc>
   </url>
   <url>
+    <loc>https://ronnyhdez.github.io/docmaker/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>https://ronnyhdez.github.io/docmaker/articles/index.html</loc>
   </url>
   <url>
@@ -32,5 +35,8 @@
   </url>
   <url>
     <loc>https://ronnyhdez.github.io/docmaker/reference/publish_folder_notes.html</loc>
+  </url>
+  <url>
+    <loc>https://ronnyhdez.github.io/docmaker/reference/update_md_files.html</loc>
   </url>
 </urlset>

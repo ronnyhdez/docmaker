@@ -1,9 +1,9 @@
-pandoc: 2.7.3
-pkgdown: 2.0.2
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   mkdocs_workflow: mkdocs_workflow.html
-last_built: 2022-01-18T06:21Z
+last_built: 2023-03-25T18:55Z
 urls:
   reference: https://ronnyhdez.github.io/docmaker/reference
   article: https://ronnyhdez.github.io/docmaker/articles

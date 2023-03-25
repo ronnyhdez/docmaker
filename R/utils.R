@@ -11,7 +11,7 @@
 #' @param file_to_deploy Is the name of the file to validate that have imported
 #' external images.
 #' 
-#' @example 
+#' @examples 
 #' \dontrun{
 #' copy_rmd_images("03-nicoya.Rmd")
 #'}

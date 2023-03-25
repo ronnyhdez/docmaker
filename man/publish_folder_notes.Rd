@@ -11,11 +11,20 @@ publish_folder_notes(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE)
 
 \item{mkdocs_build}{TRUE if you want to build the mkdocs documentation. This
 will run the \verb{mkdocs build --config-file=mkdocs.yml} command}
+
+\item{mkdocs_deploy}{TRUE if you want to deploy the mkdocs documentation. This
+will run the \verb{mkdocs gh-deploy --strict --force} command}
 }
 \description{
 This function will take the Rmarkdown file contained in a folder
 and transform it to a markdown file that can be taken by mkdocs to render a
 HTML file
+}
+\examples{
+\dontrun{
+convert_rmd_md(file = "check.Rmd")
+}
+
 }
 \author{
 Ronny Alexander Hernández Mora

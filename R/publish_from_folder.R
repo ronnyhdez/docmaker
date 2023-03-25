@@ -9,8 +9,10 @@
 #' @param file The Rmarkdown file that we want to convert to markdown
 #' @param mkdocs_build TRUE if you want to build the mkdocs documentation. This
 #'  will run the `mkdocs build --config-file=mkdocs.yml` command
+#' @param mkdocs_deploy TRUE if you want to deploy the mkdocs documentation. This
+#'  will run the `mkdocs gh-deploy --strict --force` command
 #' 
-#' @example 
+#' @examples 
 #' \dontrun{
 #' convert_rmd_md(file = "check.Rmd")
 #'}

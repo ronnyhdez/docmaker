@@ -7,6 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/docmaker)](https://cran.r-project.org/package=docmaker)
+[![R-CMD-check](https://github.com/ronnyhdez/docmaker/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ronnyhdez/docmaker/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview

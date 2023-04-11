@@ -61,7 +61,7 @@ update_md_files <- function(path = "here") {
     files_root %>% 
       select(file) %>% 
       pull() %>% 
-      purrr::map(~ file_copy(file.path(path, .x), 
+      purrr::map(~ fs::file_copy(file.path(path, .x), 
                              file.path(docs_path, .x),
                              overwrite = TRUE))
     
@@ -83,7 +83,7 @@ update_md_files <- function(path = "here") {
       print("No files in docs dicrectory are outdated")
     } else {
       both %>% 
-        purrr::map(~ file_copy(file.path(path, .x), 
+        purrr::map(~ fs::file_copy(file.path(path, .x), 
                                file.path(docs_path, .x),
                                overwrite = TRUE))
       

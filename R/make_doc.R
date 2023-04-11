@@ -1,11 +1,12 @@
-#' @title Take your Rmarkdown file to mkdocs
+#' @title Take your Rmarkdown or quarto files to mkdocs
 #' 
 #' @author Ronny Alexander Hernández Mora
 #' 
-#' @description This function will take your Rmarkdown file and transform it
-#' to a markdown file that can be taken by mkdocs to render a HTML
+#' @description This function will take your Rmarkdown or quarto files and 
+#' transform them into a markdown file that can be taken by mkdocs to render
+#' a HTML
 #' 
-#' @param file The Rmarkdown file that we want to convert to markdown
+#' @param file The Rmd or qmd file that we want to convert to markdown
 #' 
 #' @param mkdocs_build TRUE if you want to build the mkdocs documentation. This
 #'  will run the `mkdocs build --config-file=mkdocs.yml` command
@@ -22,18 +23,16 @@
 make_doc <- function(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
   
   # Workflow with files out of a folder ----
-  file  <- "test.Rmd"  
   
   # Read the file extension
   file_extension  <- stringr::str_extract(file, "\\.[^.]*$")
-  file_extension
   # Remove path and keep just the file name and extension
+  
   original_file_name <- stringr::str_remove(file, ".*/")
-  original_file_name  
   
   # Change qmd or Rmd file extension to md.
   file_name <- paste0(fs::path_ext_remove(original_file_name), ".md")
-  file_name  
+  
   # Render the file in here
   if (file_extension == ".Rmd") {
     rmarkdown::render(input = file, 

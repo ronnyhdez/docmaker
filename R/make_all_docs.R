@@ -26,11 +26,11 @@
 make_all_docs <- function(deploy = FALSE) {
   
   # List all files except the readme
-  files <- fs::dir_ls(glob = "*.Rmd") 
+  files <- fs::dir_ls(regexp = ".*\\.(Rmd|qmd)$")
   
   if (fs::file_exists("README.Rmd")) {
-    rm_readme <- !files %in% c("README.Rmd")
-    files <- files[rm_readme]
+    rm_readme <- !files_rmd %in% c("README.Rmd")
+    files_rmd <- files_rmd[rm_readme]
   }
   
   # Use own package function to render everything to md into docs folder

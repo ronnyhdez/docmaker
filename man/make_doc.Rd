@@ -2,12 +2,12 @@
 % Please edit documentation in R/make_doc.R
 \name{make_doc}
 \alias{make_doc}
-\title{Take your Rmarkdown file to mkdocs}
+\title{Take your Rmarkdown or quarto files to mkdocs}
 \usage{
 make_doc(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE)
 }
 \arguments{
-\item{file}{The Rmarkdown file that we want to convert to markdown}
+\item{file}{The Rmd or qmd file that we want to convert to markdown}
 
 \item{mkdocs_build}{TRUE if you want to build the mkdocs documentation. This
 will run the \verb{mkdocs build --config-file=mkdocs.yml} command}
@@ -16,8 +16,9 @@ will run the \verb{mkdocs build --config-file=mkdocs.yml} command}
 will run the \verb{mkdocs gh-deploy --strict --force} command}
 }
 \description{
-This function will take your Rmarkdown file and transform it
-to a markdown file that can be taken by mkdocs to render a HTML
+This function will take your Rmarkdown or quarto files and
+transform them into a markdown file that can be taken by mkdocs to render
+a HTML
 }
 \examples{
 \dontrun{

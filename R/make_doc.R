@@ -22,18 +22,31 @@
 make_doc <- function(file, mkdocs_build = FALSE, mkdocs_deploy = FALSE) {
   
   # Workflow with files out of a folder ----
+  file  <- "test.Rmd"  
   
+  # Read the file extension
+  file_extension  <- stringr::str_extract(file, "\\.[^.]*$")
+  file_extension
   # Remove path and keep just the file name and extension
   original_file_name <- stringr::str_remove(file, ".*/")
+   original_file_name  
   
-  # Change Rmd file extension to md.
+  # Change qmd or Rmd file extension to md.
   file_name <- paste0(fs::path_ext_remove(original_file_name), ".md")
-  
+   file_name  
   # Render the file in here
+  if (file_extension == "Rmd") {
   rmarkdown::render(input = file, 
                     output_file = file_name,
                     output_format = "md_document")
-  
+  } else if (file_extension == "qmd") {
+	  quarto::quarto_render(input = file,
+							output_file = file_name,
+							output_format = "md_document")
+  } else {
+	  stop("File format not supported")
+  }
+
   # Copy new md file to docs/ folder (where site in rendered)
   fs::file_move(file_name, new_path = "docs/")
   

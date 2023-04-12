@@ -104,12 +104,18 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ronnyhdez/docmaker" class="external-link">docmaker</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/build_repo.html">build_repo</a></span><span class="op">(</span>github_page_url <span class="op">=</span> <span class="st">"https://ronnyhdez.github.io/drawer/"</span>,</span>
 <span>           site_author <span class="op">=</span> <span class="st">"Ronny A. Hernández Mora"</span><span class="op">)</span></span></code></pre></div>
-<p>Once you have a repository, you can take your Rmarkdown/Quarto/Markdown notes and deploy them with GitHup pages</p>
+<p>Once you have a repository, you can take your Rmarkdown/Quarto/Markdown notes and deploy them with GitHub pages</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/make_doc.html">make_doc</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"check.Rmd"</span>, mkdocs_build <span class="op">=</span> <span class="cn">TRUE</span>, mkdocs_deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>If you have several files in the root of your project directory, you can instead use the following function to build and deploy all your Rmd files:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/make_all_docs.html">make_all_docs</a></span><span class="op">(</span>deploy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p>In the case of having <code>md</code> files, you can use the following function to update them in the folder that is deployed to GitHub pages:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/update_md_files.html">update_md_files</a></span><span class="op">(</span><span class="st">"~/Desktop/test_docmaker"</span><span class="op">)</span></span></code></pre></div>
+<p>If a file is no longer needed, and you erase that file from your root directory, it will needed to update the <code>docs/</code> folder. In that case we can use the function:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/clean_files.html">clean_files</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>

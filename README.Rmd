@@ -57,7 +57,7 @@ build_repo(github_page_url = "https://ronnyhdez.github.io/drawer/",
 ```
 
 Once you have a repository, you can take your Rmarkdown/Quarto/Markdown notes
-and deploy them with GitHup pages
+and deploy them with GitHub pages
 
 ```{r make_doc example, eval = FALSE}
 make_doc(file = "check.Rmd", mkdocs_build = TRUE, mkdocs_deploy = TRUE)
@@ -68,6 +68,21 @@ use the following function to build and deploy all your Rmd files:
 
 ```{r make_all_docs example, eval  = FALSE}
 make_all_docs(deploy = TRUE)
+```
+
+In the case of having `md` files, you can use the following function to update
+them in the folder that is deployed to GitHub pages:
+
+```{r, eval = FALSE}
+update_md_files("~/Desktop/test_docmaker")
+```
+
+If a file is no longer needed, and you erase that file from your root directory,
+it will needed to update the `docs/` folder. In that case we can use the 
+function:
+
+```{r, eval = FALSE}
+clean_files()
 ```
 
 ## Getting help

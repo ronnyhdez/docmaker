@@ -4,7 +4,7 @@
 \alias{clean_files}
 \title{Clean files in the docs folder that no longer exists in the root path.}
 \usage{
-clean_files(path)
+clean_files(path = "here")
 }
 \arguments{
 \item{path}{The path where your directory with your notes are located. If

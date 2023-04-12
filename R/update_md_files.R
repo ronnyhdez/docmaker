@@ -34,8 +34,6 @@ update_md_files <- function(path = "here") {
   stopifnot("There is no docs directory in path" = fs::dir_exists(docs_path))
   
   # Identify md files in the root directory
-  # path <- "~/Documents/repos/github/drawer" 
-  # path <- "~/Desktop/test_docmaker"
   files_root <- fs::dir_info(path) %>% 
     filter(type == "file",
            grepl("\\.md$", path)) %>% 

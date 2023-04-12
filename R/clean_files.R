@@ -3,11 +3,11 @@
 clean_files <- function(path) {
   # Create objects with paths
   if (path == "here") {
-    path <- here::here()
+    root_path <- here::here()
     docs_path <- paste0(path, "/docs")
     
   } else {
-    path <- path
+    root_path <- path
     docs_path <- paste0(path, "/docs")
   }
   
@@ -50,14 +50,14 @@ clean_files <- function(path) {
     select(file_name) %>%
     pull()
   
-  files_to_erase <- purrr::map_vec(both, function(path) {
-    paste0(docs_path, "/", path)
-  })
-  
-  fs::file_delete(files_to_erase)
-  
-  
-  
-  
+  if (length(both) == 0) {
+    print("No outdated files existed in the docs folder")
+  } else {
+    files_to_erase <- purrr::map_vec(both, function(path) {
+      paste0(docs_path, "/", path)
+    })
+    
+    fs::file_delete(files_to_erase)
+  }
 }
 
